@@ -307,8 +307,610 @@ filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
   font-size: 1rem;
   line-height: 19px;
   font-weight: 600;
-
 }
+
+    /* GLOBAL SAFETY FIX (Zero Horizontal Overflow on Projector/Phone) overflow on projector ko zero kar deta  */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+   /* CLEAN GLOBAL RESET (Prevents Right-Edge Clipping) */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Keep Hero Card Fully Inside Screen */
+.hero {
+  width: 100% !important;
+  max-width: 1360px !important;
+  margin: 0 auto !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+.hero-right {
+  max-width: 100% !important;
+}
+
+.mascot-card {
+  max-width: 100% !important;
+}
+
+
+   /* SECTION 2: EVALIX GLOW BANNER  */
+
+.evalix-banner {
+  position: relative;
+  width: 100% !important;
+  min-height: 55vh;
+  padding: 5.5rem 5%;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background: linear-gradient(160deg, #0b1020, #111a33);
+  overflow: hidden;
+}
+
+.banner-title-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.9rem;
+}
+
+.banner-main,
+.banner-glow {
+  font-size: clamp(3.5rem, 11vw, 8.5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0;
+  user-select: none;
+}
+
+.banner-main {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, #1b1f33 0%, #5562e8 55%, #0f121e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.banner-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  color: #6366f1;
+  filter: blur(28px);
+  opacity: 0.7;
+}
+
+.banner-quote {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 600;
+  color: #e2e8f0;
+  max-width: 650px;
+  margin: 0.5rem auto 0;
+}
+
+/* =========================================================
+   3-COLUMN DARK FOOTER (Edge-to-Edge Full Width)
+========================================================= */
+.evalix-footer {
+  width: 100% !important;
+  background: #0d0f14 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3.5rem 6% 1.8rem !important;
+  color: #cbd5e1;
+  display: block !important;
+}
+
+
+.footer-container {
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1.6fr 1fr 0.8fr !important;
+  gap: 2.5rem !important;
+  align-items: start !important;
+}
+
+.footer-brand,
+.footer-links,
+.footer-connect {
+  text-align: left !important;
+  width: 100% !important;
+}
+
+.footer-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.f-ball {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.f-ball-1 { background: #6366f1; }
+.f-ball-2 { background: #22c55e; }
+
+.footer-logo h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.footer-logo h3 span {
+  color: #6366f1;
+}
+
+.footer-brand p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 310px;
+  margin: 0;
+}
+
+.footer-col h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem !important;
+}
+
+.footer-links ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.65rem !important;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-socials {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.1rem !important;
+}
+
+.footer-socials a {
+  color: #e2e8f0;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: #6366f1;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  width: 100%;
+  max-width: 1320px;
+  margin: 2.5rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* =========================================================
+   MULTI-DEVICE RESPONSIVE (Projector, Tablet, Phone)
+========================================================= */
+@media (max-width: 1024px) {
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2.5rem !important;
+  }
+
+  .hero-btns {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-connect {
+    text-align: center !important;
+  }
+
+  .footer-logo,
+  .footer-socials {
+    justify-content: center !important;
+  }
+
+  .footer-brand p {
+    margin: 0 auto !important;
+  }
+}
+
+
+/* Mobile Responsive Stack */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .footer-brand, .footer-links, .footer-connect {
+    text-align: center !important;
+    width: 100%;
+  }
+  .footer-logo, .footer-socials {
+    justify-content: center !important;
+  }
+  .footer-brand p {
+    margin: 0 auto;
+  }
+}
+/* Large Stage Projectors (1600px+) */
+@media (min-width: 1600px) {
+  nav, .hero, .footer-container {
+    max-width: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Tablets & Small Stage Projectors (1024x768 / iPad / Split Screen) */ 
+@media (max-width: 1024px) {
+  nav {
+    padding: 1rem 4% !important;
+  }
+
+  .nav-links {
+    gap: 1.2rem !important;
+  }
+
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 3rem 5% !important;
+    gap: 2.5rem !important;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100% !important;
+    max-width: 680px !important;
+  }
+
+  .hero-btns {
+    justify-content: center !important;
+  }
+
+  .mascot-card {
+    margin: 0 auto !important;
+    max-width: 440px !important;
+  }
+}
+
+/* Mobile Phones (768px and below) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+
+  nav {
+    padding: 0.9rem 4% !important;
+  }
+
+  .nav-btn {
+    gap: 0.5rem !important;
+  }
+
+  .btn-admin,
+  .btn-start {
+    padding: 0.5rem 0.85rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  .hero {
+    padding: 2.2rem 4% !important;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.8rem !important;
+  }
+
+  .hero-btns button {
+    width: 100% !important;
+  }
+
+  .evalix-banner {
+    min-height: 38vh;
+    padding: 3.5rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-logo,
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto;
+  }
+}
+/* Smooth Pop-In Animation for Exam Modal */
+#examModal > div {
+  animation: modalPop 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+/* =========================================================
+   EVALIX LIVE QUIZ & ANTI-CHEAT GUARD (External CSS)
+========================================================= */
+.quiz-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #818cf8;
+  font-weight: 700;
+}
+
+.timer-badge {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.q-title {
+  margin: 0.85rem 0 1.1rem;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: #ffffff;
+}
+
+.options-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.mcq-opt-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #18203b;
+  color: #e2e8f0;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mcq-opt-btn:hover {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.22);
+  transform: translateX(4px);
+}
+
+.cheat-alert {
+  margin-top: 0.9rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.score-sub {
+  color: #cbd5e1;
+  margin: 0.5rem 0 1rem;
+  font-size: 1rem;
+}
+
+.lb-card {
+  background: #090d1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.lb-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* =========================================================
+   TEACHER ADMIN MODAL & ECO IMPACT BADGE (100% External CSS)
+========================================================= */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 18, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.admin-box {
+  background: #111629;
+  border: 1px solid #6366f1;
+  border-radius: 16px;
+  padding: 1.8rem;
+  width: 100%;
+  max-width: 500px;
+  color: #ffffff;
+  animation: modalPop 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.admin-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.admin-badge {
+  color: #818cf8;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.close-x {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.admin-sub {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  margin: 0.3rem 0 1rem;
+}
+
+.admin-field {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  margin-bottom: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #090d1a;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.admin-opts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.admin-submit {
+  display: block;
+  width: 75%;
+  margin: 0.8rem auto 0;
+  text-align: center;
+}
+
+.admin-msg {
+  display: none;
+  color: #4ade80;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0.4rem 0;
+}
+
+.eco-banner {
+  margin-top: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(34, 197, 94, 0.14);
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  color: #86efac;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+
 
 
 
