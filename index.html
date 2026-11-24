@@ -13,9 +13,7 @@
 
 </head>
 <body>
-
 <nav>
- 
     <div class="bloom">
     <div class="logo-balls">
     <span class="ball ball-1"></span>
@@ -43,10 +41,10 @@
     Create custom MCQ tests, lock browser tabs automatically 
     <span>and get instant leaderboards.</span>
   </p>
-
+<!-- IMPORTANT BUTTON  -->
   <div class="hero-btns">
-    <button class="btn-primary">know more →</button>
-    <button class="btn-secondary">Teacher Admin</button>
+    <button class="btn-primary">Start Lab Test →</button>
+    <button class="btn-secondary">Live Demo Guard</button>     
   </div>
 </div>
 
@@ -57,6 +55,121 @@
     <p>Auto tab-switch lock, custom teacher tests, and instant student leaderboards.</p>
   </div>
 </div>
+</section>
+  <section class="evalix-banner">
+    <div class="banner-title-wrap">
+      <h1 class="banner-glow" aria-hidden="true">EVALIX</h1>
+      <h1 class="banner-main">EVALIX</h1>
+    </div>
+    <p class="banner-quote">Built for classrooms that demand pure integrity.</p>
   </section>
+  <footer class="evalix-footer">
+    <div class="footer-container">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <span class="f-ball f-ball-1"></span>
+          <span class="f-ball f-ball-2"></span>
+          <h3>Eval<span class="play">ix</span></h3>
+        </div>
+        <p>Next-gen anti-cheat computer lab assessment engine built for modern schools &amp; educators.</p>
+      </div>
+      <div class="footer-col footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Live Guard</a></li>
+          <li><a href="#leaderboard">Leaderboard</a></li>
+          <li><a href="#admin">Teacher Admin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-connect">
+        <h4>Connect</h4>
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub">
+            <i class="ri-github-fill"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="ri-linkedin-box-fill"></i>
+          </a>
+          <a href="mailto:nikhilbuilds.hq@gmail.com" aria-label="Email">
+            <i class="ri-mail-send-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Evalix. Built with pure passion by Nikhil</p>
+    </div>
+  </footer>
+<div id="examModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 999;">
+  <div style="background: #111629; padding: 2rem; border-radius: 14px; border: 1px solid #6366f1; width: 90%; max-width: 480px; color: white;">
+    
+    <!-- Top Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+      <span style="color: #4ade80; font-weight: bold;">🟢 Live Guard Active</span>
+      <button id="closeExamBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">✕</button>
+    </div>
+
+    <!-- 1. Intro Screen -->
+    <div id="introArea">
+      <h2 style="margin-top: 1rem;">Start CSE Lab Test</h2>
+      <p style="color: #94a3b8; font-size: 0.9rem;">Tab switching is monitored automatically.</p>
+      <input id="studentName" type="text" placeholder="Enter your name" style="width: 100%; padding: 0.7rem; margin-top: 0.8rem; border-radius: 8px; border: 1px solid #334155; background: #090d1a; color: white;">
+      <button id="beginBtn" class="btn-primary" style="display: block; width: 65%; margin: 1.2rem auto 0; text-align: center;">Begin Test →</button>
+    </div>
+
+    <!-- 2. Quiz Screen -->
+    <div id="quizArea" style="display: none;">
+      <div id="cheatBanner" class="cheat-alert" style="display: none;"></div>
+      <div class="quiz-top-meta">
+        <span id="qCounter">Question 1 / 4</span>
+        <span id="timerText" class="timer-badge">⏱️ 60s</span>
+      </div>
+      <h3 id="questionText" class="q-title"></h3>
+      <div id="optionsList" class="options-stack"></div>
+    </div>
+
+    <!-- 3. Result & Leaderboard Screen -->
+    <div id="resultArea" style="display: none;">
+      <h2 id="resultHeading">Test Submitted! 🎉</h2>
+      <p id="finalScoreText" class="score-sub"></p>
+      <div id="liveLeaderboard" class="lb-card"></div>
+      <button id="doneExamBtn" class="btn-secondary" style="width: 100%; margin-top: 1rem;">Close &amp; Return</button>
+    </div>
+
+  </div>
+</div>
+  <!-- TEACHER ADMIN MODAL (Pure HTML - Zero Inline CSS) -->
+  <div id="adminModal" class="modal-backdrop">
+    <div class="admin-box">
+      <div class="admin-top">
+        <span class="admin-badge">👩‍🏫 Teacher Admin Panel</span>
+        <button id="closeAdminBtn" class="close-x">✕</button>
+      </div>
+      <h2>Create Custom Lab Question</h2>
+      <p class="admin-sub">Add a new MCQ live — it instantly updates the student test &amp; saves paper! 🌱</p>
+
+      <input type="text" id="newQInput" class="admin-field" placeholder="Enter question (e.g., What is HTML?)" />
+      <div class="admin-opts-grid">
+        <input type="text" id="opt0Input" class="admin-field" placeholder="Option A" />
+        <input type="text" id="opt1Input" class="admin-field" placeholder="Option B" />
+        <input type="text" id="opt2Input" class="admin-field" placeholder="Option C" />
+        <input type="text" id="opt3Input" class="admin-field" placeholder="Option D" />
+      </div>
+
+      <select id="correctAnsSelect" class="admin-field">
+        <option value="0">Correct Answer: Option A</option>
+        <option value="1">Correct Answer: Option B</option>
+        <option value="2">Correct Answer: Option C</option>
+        <option value="3">Correct Answer: Option D</option>
+      </select>
+
+      <p id="adminMsg" class="admin-msg"></p>
+      <button id="addQuestionBtn" class="btn-primary admin-submit">+ Add Question to Live Test</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
 </body>
+
 </html>
