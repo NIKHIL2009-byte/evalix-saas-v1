@@ -646,6 +646,7 @@ html, body {
   .mascot-card {
     margin: 0 auto !important;
     max-width: 440px !important;
+    
   }
 }
 
@@ -661,11 +662,12 @@ html, body {
 
   .nav-btn {
     gap: 0.5rem !important;
+    padding:7px 10px;
   }
 
   .btn-admin,
   .btn-start {
-    padding: 0.5rem 0.85rem !important;
+    padding: 0.2rem 0.45rem !important;
     font-size: 0.82rem !important;
   }
 
@@ -723,9 +725,9 @@ html, body {
     transform: scale(1) translateY(0);
   }
 }
-/* =========================================================
-   EVALIX LIVE QUIZ & ANTI-CHEAT GUARD (External CSS)
-========================================================= */
+
+   /* EVALIX LIVE QUIZ & ANTI-CHEAT GUARD (External CSS) */
+
 .quiz-top-meta {
   display: flex;
   justify-content: space-between;
@@ -809,9 +811,9 @@ html, body {
   padding: 0.4rem 0.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-/* =========================================================
-   TEACHER ADMIN MODAL & ECO IMPACT BADGE (100% External CSS)
-========================================================= */
+/* 
+   TEACHER ADMIN MODAL & ECO IMPACT BADGE (100% External CSS) */
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
